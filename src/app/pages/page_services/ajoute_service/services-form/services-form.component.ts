@@ -14,7 +14,7 @@ import { RouterLink } from '@angular/router';
 export class ServicesFormComponent {
   id : number = 1;
   categoriesObj : Categorie[] = [];
-  sous_categories : string [] = [];
+  sous_categories! : string [];
   selectSousCat! : HTMLSelectElement;
   
   private srvService = inject(SrvService);
@@ -23,8 +23,7 @@ export class ServicesFormComponent {
     this.srvService.getCategories().subscribe((data) => {
       this.categoriesObj = data;
       this.categoriesObj.forEach(cat => {
-        console.log(cat.sous_cat);
-        
+        console.log(cat.critieres);
       });
     });
   }
