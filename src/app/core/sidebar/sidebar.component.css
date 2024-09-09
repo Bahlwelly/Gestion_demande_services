@@ -1,0 +1,16 @@
+.selected {
+    position: relative;
+    color: #E67E22;
+}
+
+.selected::before {
+    content: '';
+    position: absolute;
+    top: 4;
+    left: -40px;
+    width: 18px;
+    height: 35px;
+    border-radius: 6px;
+    background: #E67E22;
+    transition: background-color 0.3s ease;
+}

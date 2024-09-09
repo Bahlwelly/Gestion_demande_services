@@ -1,0 +1,72 @@
+<div class="flex items-center justify-between py-4">
+    <div class="flex gap-3">
+        <span class="mt-1.5 cursor-pointer" routerLink="/list_services" >
+            <svg width="7" height="19" viewBox="0 0 7 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 1.3125L1 9.40829L6 17.5041" stroke="#0071BC" stroke-width="1.98096" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </span>
+        <h2 class="font-semibold text-[22px] text-[#0071BC]">Détail d'un service</h2>
+    </div>
+
+    <div class="flex gap-8">
+        <span class="flex gap-1 text-[17px] text-[#008AFF] cursor-pointer">
+            <svg width="21" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_0_2615)">
+                <path d="M15.965 3.31488C16.2114 3.06845 16.504 2.87297 16.8259 2.73961C17.1479 2.60624 17.493 2.5376 17.8415 2.5376C18.19 2.5376 18.5351 2.60624 18.8571 2.73961C19.179 2.87297 19.4716 3.06845 19.718 3.31488C19.9644 3.56131 20.1599 3.85386 20.2933 4.17583C20.4267 4.49781 20.4953 4.8429 20.4953 5.1914C20.4953 5.5399 20.4267 5.88499 20.2933 6.20696C20.1599 6.52894 19.9644 6.82149 19.718 7.06792L7.0515 19.7344L1.89107 21.1418L3.29846 15.9814L15.965 3.31488Z" stroke="#008AFF" stroke-width="1.87652" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_0_2615">
+                <rect width="22.5182" height="22.5182" fill="white" transform="translate(0.0146027 0.5)"/>
+                </clipPath>
+                </defs>
+                </svg>
+                Modifier                
+        </span>
+
+        <span class="flex gap-1 text-[17px] text-[#E26161] cursor-pointer">
+            <svg width="25" height="23" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.67014 7.125V19.125C4.67162 19.6218 4.86964 20.0979 5.22095 20.4492C5.57226 20.8005 6.04831 20.9985 6.54514 21H19.2951C19.792 20.9985 20.268 20.8005 20.6193 20.4492C20.9706 20.0979 21.1687 19.6218 21.1701 19.125V7.125" stroke="#E26161" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21.3576 3H4.48264C3.75776 3 3.17014 3.58763 3.17014 4.3125V5.4375C3.17014 6.16237 3.75776 6.75 4.48264 6.75H21.3576C22.0825 6.75 22.6701 6.16237 22.6701 5.4375V4.3125C22.6701 3.58763 22.0825 3 21.3576 3Z" stroke="#E26161" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M15.9201 14.25L12.9201 17.25L9.92014 14.25M12.9201 16.2136V10.5" stroke="#E26161" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Archiver Service
+        </span>
+
+        <span class="flex gap-2 text-[17px]">
+            Statue : 
+            <svg class="cursor-pointer" width="43" height="26" viewBox="0 0 53 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.5" width="52" height="26" rx="13" fill="#48BB78"/>
+                <circle cx="40.02" cy="12.9996" r="9.88" fill="white"/>
+                </svg>                
+        </span>
+    </div>
+</div>
+
+<div class="mt-[25px] flex flex-col gap-7 p-8">
+    <div class="flex gap-32">
+        <p class="text-[#48484880] text-[18px]">DESIGNATION </p>
+        <p>{{ serviceDetails.designation }}</p> 
+    </div>
+    <div class="flex gap-36">
+        <p class="text-[#48484880] text-[18px]">CATEGORIE </p>
+        <p>{{ serviceDetails.categorie }}</p>
+    </div>
+    <div class="flex gap-[85px]">
+        <p class="text-[#48484880] text-[18px]">SOUS-CATEGORIE </p>
+        <p>{{ serviceDetails.sous_categorie }}</p>
+    </div>
+    <div class="flex gap-32">
+        <p class="text-[#48484880] text-[18px]">DESCRIPTION </p>
+        <p>{{ serviceDetails.description }}</p>
+    </div>
+</div>
+
+
+<div class="px-8 mt-12">
+    <h2 class=" text-[20px] text-[#0071BC]">Les critères d’éligibilité :</h2>
+    <ul class="p-4 flex flex-col gap-4 mt-3 list-disc">
+        @for (critiere of critieres; track $index) {
+            <li>{{ critiere }}</li>
+        }
+    </ul>
+</div>
