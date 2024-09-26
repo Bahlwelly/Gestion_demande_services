@@ -1,0 +1,57 @@
+<nav class="flex items-center">
+    <p class="w-1/3 text-left py-3 px-4 text-[#0071BC]">Information de base</p>
+    <p class="w-1/3 text-left py-3 px-4">Critéres éligibilité</p>
+    <p class="w-1/5 text-left py-3 px-4">Aperçu</p>
+</nav>
+<div class="ml-5 flex w-full relative">
+    <hr class="absolute w-[420px] z-10 -ml-12 h-[3.5px] bg-[#0071BC]">
+    <hr class=" w-full h-[3.5px]  bg-gray-200 ml-[200px]">
+</div>
+
+<form [formGroup]="servicesForm" (submit)="suivant()" class="mt-16 ml-7 w-full">
+    <h2 class="text-[22px]">Information de base</h2> 
+    <div class="py-10 flex items-center w-full justify-between gap-4">
+        <div class="flex flex-col relative gap-1.5 w-full">
+            <label for="designation">Designation</label>
+            <input class="bg-white  border-[#E1E1E1] outline-none border-[3px] rounded-md pr-6 pl-2 py-2 " type="text" name="designation" formControlName="designation"  placeholder="ex: Service #">
+        </div>
+        
+        <div class="flex flex-col relative gap-1.5 w-full">
+            <label for="categorie">Categorie</label>
+            <select (change)="onCategorieChange($event)" class="bg-[#fff] border-[#E1E1E1] border-[3px] appearance-none cursor-pointer outline-none rounded-md pr-6 pl-2 py-2 " name="categorie" formControlName="categorie">
+                <option  disabled>Categories</option>
+                @for (categorie of categoriesObj; track categorie) {
+                    <option value="{{categorie.id}}">{{ categorie.cat }}</option>
+                }
+            </select>
+            <span class="absolute top-10 right-0 cursor-pointer"><svg width="38" height="26" viewBox="0 0 38 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.2621 11.0691L21.2247 16.5694L27.1873 11.0691" stroke="#3D3C42" stroke-width="1.98096" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+        </div>
+
+        <div class="flex flex-col relative gap-1.5 w-full">
+            <label for="sous_categorie">Sous-Categorie</label>
+            <select (change)="onSousCategorieChange($event)" class="bg-[#fff] border-[#E1E1E1] border-[3px] appearance-none cursor-pointer outline-none rounded-md pr-6 pl-2 py-2 " name="sous_categorie" formControlName="sous_categorie">
+                <option  disabled>Sous-Categories</option>
+                @for (sous_categorie of sous_categories; track sous_categorie) {
+                    <option>{{ sous_categorie }}</option>
+                }
+            </select>
+            <span class="absolute top-10 right-0 cursor-pointer"><svg width="38" height="26" viewBox="0 0 38 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.2621 11.0691L21.2247 16.5694L27.1873 11.0691" stroke="#3D3C42" stroke-width="1.98096" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+        </div>
+    </div>
+
+    <div class="flex flex-col gap-1.5">
+        <label for="description">Description</label>
+        <textarea name="description"  formControlName="description" placeholder="Description" class="bg-[#fff] h-[200px] border-[#E1E1E1] border-[3px] appearance-none outline-none rounded-md pr-6 pl-2 py-2 "></textarea>
+    </div>
+
+    <div class="absolute bottom-14 right-20 flex gap-4">
+        <button routerLink = "/main/services/list" routerLinkActive ="true" class="bg-white text-[#0071BC] font-semibold border-[#0071BC] hover:border-[#0071bcb4] hover:text-[#0071bcb4] transition-all duration-200 border-[2px] rounded-md px-6 py-2">Anuller</button>
+        <button type="submit" class="bg-[#0071BC] hover:bg-[#0071bcb4] transition-all duration-200 text-white font-semibold py-2 px-24 rounded-md">Suivant</button>
+    </div>
+</form>

@@ -1,0 +1,9 @@
+.custom-popup {
+    background-color: #da8d00; /* Change background color */
+    border: 2px solid #333; /* Add border */
+}
+
+.custom-title {
+color: #ff0000; /* Change title color */
+font-size: 24px; /* Change title font size */
+}

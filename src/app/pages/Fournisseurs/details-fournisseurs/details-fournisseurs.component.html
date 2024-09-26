@@ -1,0 +1,80 @@
+<div class="flex items-center justify-between py-4">
+    <div class="flex gap-3">
+        <span class="mt-1.5 cursor-pointer" routerLink="/main/fournisseurs/list" >
+            <svg width="7" height="19" viewBox="0 0 7 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 1.3125L1 9.40829L6 17.5041" stroke="#0071BC" stroke-width="1.98096" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </span>
+        <h2 class="font-semibold text-[22px] text-[#0071BC]">Détail d'un Fournisseur </h2>
+    </div>
+
+    <div class="flex gap-8">
+        <a routerLinkActive="active" >
+            <span class="flex gap-1 stroke-[#0088FF] hover:stroke-[#8bc0ee] text-[17px] text-[#0088ff] hover:text-[#8bc0ee] transition-all duration-200 cursor-pointer">
+                <svg width="21" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_0_2615)">
+                        <path d="M15.965 3.31488C16.2114 3.06845 16.504 2.87297 16.8259 2.73961C17.1479 2.60624 17.493 2.5376 17.8415 2.5376C18.19 2.5376 18.5351 2.60624 18.8571 2.73961C19.179 2.87297 19.4716 3.06845 19.718 3.31488C19.9644 3.56131 20.1599 3.85386 20.2933 4.17583C20.4267 4.49781 20.4953 4.8429 20.4953 5.1914C20.4953 5.5399 20.4267 5.88499 20.2933 6.20696C20.1599 6.52894 19.9644 6.82149 19.718 7.06792L7.0515 19.7344L1.89107 21.1418L3.29846 15.9814L15.965 3.31488Z"  stroke-width="1.87652" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_0_2615">
+                            <rect width="22.5182" height="22.5182" fill="white" transform="translate(0.0146027 0.5)"/>
+                        </clipPath>
+                    </defs>
+                </svg>
+                Modifier                
+            </span>
+        </a>
+
+        <span (click)="delete(fournisseursDetails.id)" class="flex gap-1 text-[17px] fill-[#f21c1c] hover:fill-[#e0a4a4]  text-[#f21c1c] hover:text-[#e0a4a4] cursor-pointer transition-all duration-200">
+            <svg width="25px" height="25px" viewBox="-1.28 -1.28 18.56 18.56" xmlns="http://www.w3.org/2000/svg" class="bi bi-trash" transform="rotate(0)matrix(1, 0, 0, 1, 0, 0)" stroke-width="0.00016"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"  stroke-width="0.096"></g><g id="SVGRepo_iconCarrier"> <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"></path> <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"></path> </g></svg>
+            Supprimer 
+        </span>
+
+        <span class="flex gap-2">
+            etat : <p class="font-semibold" [style]="fournisseursDetails.disponible ? {'color': '#1cf21c'} : {'color' : '#f21c1c'}">{{fournisseursDetails.disponible ? "Disponible" : "Occupé"}}</p>
+        </span>
+    </div>
+</div>
+
+
+<div class="flex items-start gap-5 mt-[25px]">
+    <div class="px-3 border-[3px] border-gray-300 rounded-lg w-2/5">
+        <div class=" flex flex-col gap-7 p-6">
+            <div class="flex gap-32">
+                <p class="text-[#48484880] text-[18px]">NOM : </p>
+                <p>{{ fournisseursDetails.nom }}</p> 
+            </div>
+
+            <div class="flex gap-20">
+                <p class="text-[#48484880] text-[18px]">TELEPHONE :  </p>
+                <p>{{ fournisseursDetails.tele }}</p>
+            </div>
+
+            <div class="flex gap-28">
+                <p class="text-[#48484880] text-[18px]">E-MAIL : </p>
+                <p>{{ fournisseursDetails.email }}</p>
+            </div>
+
+            <div class="flex gap-24">
+                <p class="text-[#48484880] text-[18px]">ADRESSE : </p>
+                <p>{{fournisseursDetails.adress}}</p>
+            </div>
+    </div>
+</div>
+<ul class="px-3 border-[3px] border-gray-300 rounded-lg w-3/5">
+    @for (service of frnServices; track $index) {
+        <li class="p-3 relative border-b-[2px] border-gray-300">
+            <span class="flex items-center gap-1 mb-2">
+                <svg width="25" height="15" viewBox="0 0 47 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.19054 34.5216C0.864171 34.5216 0.591179 34.4118 0.371566 34.1922C0.153477 33.9741 0.0444336 33.7026 0.0444336 33.3778C0.0444336 33.0514 0.153477 32.7792 0.371566 32.5611C0.591179 32.343 0.863408 32.234 1.18825 32.234H45.7103C46.0351 32.234 46.3066 32.343 46.5247 32.5611C46.7443 32.7792 46.8541 33.0514 46.8541 33.3778C46.8541 33.7026 46.7443 33.9741 46.5247 34.1922C46.3051 34.4103 46.0336 34.5201 45.7103 34.5216H1.19054ZM6.55505 29.9463C5.50274 29.9463 4.62429 29.5933 3.91969 28.8872C3.21358 28.1826 2.86052 27.3034 2.86052 26.2495V3.89928C2.86052 2.84697 3.21358 1.96851 3.91969 1.26392C4.62581 0.559327 5.50426 0.207031 6.55505 0.207031H40.3435C41.3958 0.207031 42.2743 0.559327 42.9788 1.26392C43.685 1.97004 44.038 2.84926 44.038 3.90157V26.2518C44.038 27.3041 43.6857 28.1826 42.9811 28.8872C42.2765 29.5918 41.3973 29.9448 40.3435 29.9463H6.55505ZM6.55505 27.6587H40.3435C40.6943 27.6587 41.0168 27.5115 41.3112 27.2172C41.604 26.9244 41.7504 26.6018 41.7504 26.2495V3.89928C41.7504 3.54851 41.604 3.22671 41.3112 2.9339C41.0168 2.64108 40.6943 2.49467 40.3435 2.49467H6.55505C6.20428 2.49467 5.88173 2.64108 5.58738 2.9339C5.29457 3.22671 5.14816 3.54927 5.14816 3.90157V26.2518C5.14816 26.6026 5.29457 26.9244 5.58738 27.2172C5.88173 27.5115 6.20428 27.6587 6.55505 27.6587Z" fill="#BBD4F3"/>
+                    </svg>
+                <p class="text-[18px] ">{{ service.designation }}</p>
+            </span>
+            <p>{{ service.description | shorter : 60 }}</p>
+
+            <span (click)="logId(service)" class="fill-[#0071BC] absolute top-2 right-3 cursor-pointer hover:fill-[#0071bc86] transition-all duration-200" [routerLink]="['/main/services/admin/details/', service.id]" RouterLinkActive="true">
+                <svg width="30px" height="30px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>information-circle-solid</title> <g id="Layer_2" data-name="Layer 2"> <g id="invisible_box" data-name="invisible box"> <rect width="48" height="48"fill='none' ></rect> </g> <g id="icons_Q2" data-name="icons Q2"> <path d="M24,2A22,22,0,1,0,46,24,21.9,21.9,0,0,0,24,2Zm2,32a2,2,0,0,1-4,0V22a2,2,0,0,1,4,0ZM24,16a2,2,0,1,1,2-2A2,2,0,0,1,24,16Z"></path> </g> </g> </g></svg>
+            </span>
+        </li>
+    }
+</ul>

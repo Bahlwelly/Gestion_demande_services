@@ -1,0 +1,42 @@
+<form [formGroup]="frnForm" (ngSubmit)="submit()" class="mt-4 ml-7 w-full">
+    <h2 class="text-[22px]">Ajouter un Fournisseurs</h2> 
+    <div class="flex items-start gap-5">      
+        <div class="py-10 flex flex-col items-center w-2/5 justify-between gap-8">
+
+            <div class="flex flex-col relative gap-1.5 w-full">
+                <label for="nom">Nom Complet</label>
+                <input class="bg-white  border-[#E1E1E1] outline-none border-[3px] rounded-md pr-6 pl-2 py-2 " type="text" name="nom" formControlName="nom" placeholder="ex: Vlan Vlan">
+            </div>
+
+            <div class="flex flex-col relative gap-1.5 w-full">
+                <label for="tele">N° Telephone</label>
+                <input class="bg-white  border-[#E1E1E1] outline-none border-[3px] rounded-md pr-6 pl-2 py-2 " type="tel" name="tele" formControlName="tele" placeholder="ex: 20 30 40 50">
+            </div>
+
+            <div class="flex flex-col relative gap-1.5 w-full">
+                <label for="email">E-mail</label>
+                <input class="bg-white  border-[#E1E1E1] outline-none border-[3px] rounded-md pr-6 pl-2 py-2 " type="email" name="emil" formControlName="email" placeholder="ex: VlanVlan@somthing.com">
+            </div>
+            
+            <div class="flex flex-col relative gap-1.5 w-full">
+                <label for="adress">Adress</label>
+                <input class="bg-white  border-[#E1E1E1] outline-none border-[3px] rounded-md pr-6 pl-2 py-2 " type="text" name="adress" formControlName="adress" placeholder="ex: Nouakchott, Nouadibou">
+            </div>
+        </div>
+        <div class=" mt-10">
+            <h2 class="mb-2">Services Fournis</h2>
+            <ul class="border-[3px] border-[#E1E1E1] rounded-lg p-3 grid grid-cols-5 gap-x-3 gap-y-4">
+                @for (service of services; track $index) {
+                    <li (click)="toglleServices($event, service.id)" [class.selected]="isServiceSelected(service.id)" [class.deselected]="!isServiceSelected(service.id)" class="text-center p-2 bg-gray-100 rounded-md cursor-pointer hover:bg-gray-50 transition-all duration-200">
+                        <p>{{ service.designation }}</p>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+
+    <div class="absolute bottom-14 right-20 flex gap-4">
+        <button routerLink = "/main/fournisseurs/list" routerLinkActive ="true" class="bg-white text-[#0071BC] font-semibold border-[#0071BC] hover:border-[#0071bcb4] hover:text-[#0071bcb4] transition-all duration-200 border-[2px] rounded-md px-6 py-2">Anuller</button>
+        <button type="submit" class="bg-[#0071BC] hover:bg-[#0071bcb4] transition-all duration-200 text-white font-semibold py-2 px-24 rounded-md">Enregistrer</button>
+    </div>
+</form>

@@ -1,0 +1,73 @@
+<div class="w-full h-screen flex items-center justify-center bg-slate-100">
+    <form class="bg-white shadow-md rounded-lg p-3 w-1/2 pb-28 relative">
+        <div class="flex justify-between items-center relative  mb-16">
+            <h1 class="text-3xl">Admin Register</h1>
+            <div class=" bg-[#0071BC] absolute -right-3 -top-3 rounded-tr-lg p-4 text-center text-white w-1/2">
+                <span class="mr-2 text-right">Si vous étes déja enregistré : <a class="ml-2 cursor-pointer underline" routerLink="/login">login</a></span>
+                
+            </div>
+        </div>
+        <div class="grid grid-cols-2">
+            <div class="w-11/12 ml-3 relative">
+                <input name="username" class="bg-white w-full mb-3 border-[#E1E1E1] outline-none border-[3px] rounded-md p-3 " type="text" placeholder="UserName">
+
+                <span class="absolute top-3 right-0">
+                    <svg width="40px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                </span>
+
+            </div>
+            
+            <div class="w-11/12 ml-3 relative">
+                <input name="username" class="bg-white w-full mb-3 border-[#E1E1E1] outline-none border-[3px] rounded-md p-3 " type="tel" placeholder="Admin Code">
+
+                <span class="absolute top-2 right-3">
+                    <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 17.5C9 18.8807 7.88071 20 6.5 20C5.11929 20 4 18.8807 4 17.5C4 16.1193 5.11929 15 6.5 15C7.88071 15 9 16.1193 9 17.5ZM9 17.5H15.125M19 20V17.75C19 17.6119 18.8881 17.5 18.75 17.5M15.125 17.5H18.75M15.125 17.5V20M18.75 17.5Lnan nanCnan nan nan nan nan nanLnan nanCnan nan nan nan nan nanL18.75 17.5ZM5 11H19C20.1046 11 21 10.1046 21 9V6C21 4.89543 20.1046 4 19 4H5C3.89543 4 3 4.89543 3 6V9C3 10.1046 3.89543 11 5 11Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <circle cx="7.5" cy="7.5" r="1.5" fill="#000000"></circle> <circle cx="12" cy="7.5" r="1.5" fill="#000000"></circle> <circle cx="16.5" cy="7.5" r="1.5" fill="#000000"></circle> </g></svg>
+                </span>
+
+            </div>
+
+            <div class="w-11/12 ml-3 relative">
+                <input type="email" name="email" class="bg-white w-full mb-3 border-[#E1E1E1] outline-none border-[3px] rounded-md p-3 " placeholder="E-mail">
+
+                <span class="absolute top-3 right-4">
+                    <svg width="22px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#000000;} </style> <g> <path class="st0" d="M476.741,129.962C476.658,129.773,476.67,129.804,476.741,129.962L476.741,129.962z"></path> <path class="st0" d="M476.741,129.962c0.344,0.768,2.132,4.792,6.374,14.314C492.696,165.778,477.733,132.192,476.741,129.962z"></path> <path class="st0" d="M483.115,144.276C393.486-56.942,101.555-43.768,24.468,159.333 c-79.871,210.431,143.055,438.656,350.166,320.186c-3.748-7.078-14.076-35.546-20.956-37.902 c-34.827,19.912-75.284,27.242-115.267,23.874c-80.693-6.801-147.99-64.165-174.165-140.074 C7.655,161.366,165.91-12.405,333.464,57.027c73.56,30.438,126.67,102.749,126.67,183.37c0,29.853-6.121,66.04-29.797,86.925 c-20.039,17.754-56.147,14.187-67.044-11.744c-12.526-30.232,0.822-75.078,5.773-106.568c3.02-19.248,6.057-38.504,9.078-57.752 c0.475-2.974-37.12-7.702-42.64-8.636c-0.601,3.812-1.202,7.623-1.802,11.435c-87.557-63.366-197.574,21.945-197.574,118.224 c-0.079,96.391,129.138,148.07,192.876,72.224c30.209,51.078,103.911,49.267,140.256,6.105 C515.807,295.311,510.872,206.584,483.115,144.276z M298.464,312.131c-55.134,74.423-160.658-24.728-97.869-101.325 c25.052-30.548,73.813-44.142,107.865-20.046C338.526,212.04,316.272,288.036,298.464,312.131z"></path> </g> </g></svg>
+                </span>
+
+            </div>
+            <div class="w-11/12 ml-3 relative">
+                <input class="bg-white w-full mb-3 border-[#E1E1E1] outline-none border-[3px] rounded-md p-3 " type="tel" placeholder="Telephone" name="tele">
+
+                <span class="absolute top-3 right-0">
+                    <svg width="40px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 2C9 1.44772 9.44772 1 10 1H14C14.5523 1 15 1.44772 15 2V3C15 3.55228 14.5523 4 14 4H10C9.44772 4 9 3.55228 9 3V2Z" fill="#000000"></path> <rect x="5.75" y="1.75" width="12.5" height="20.5" rx="1.75" stroke="#000000" stroke-width="1.5"></rect> <path d="M9 19.5H15" stroke="#000000" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+                </span>
+
+            </div>
+            <div class="w-11/12 ml-3 relative">
+                <input class="bg-white w-full mb-3 border-[#E1E1E1] outline-none border-[3px] rounded-md p-3 " type="text" placeholder="Adresse" name="adress">
+
+                <span class="absolute top-3 right-3">
+                    <svg width="25px" height="25px" viewBox="-4 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>location</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set" sketch:type="MSLayerGroup" transform="translate(-104.000000, -411.000000)" fill="#000000"> <path d="M116,426 C114.343,426 113,424.657 113,423 C113,421.343 114.343,420 116,420 C117.657,420 119,421.343 119,423 C119,424.657 117.657,426 116,426 L116,426 Z M116,418 C113.239,418 111,420.238 111,423 C111,425.762 113.239,428 116,428 C118.761,428 121,425.762 121,423 C121,420.238 118.761,418 116,418 L116,418 Z M116,440 C114.337,440.009 106,427.181 106,423 C106,417.478 110.477,413 116,413 C121.523,413 126,417.478 126,423 C126,427.125 117.637,440.009 116,440 L116,440 Z M116,411 C109.373,411 104,416.373 104,423 C104,428.018 114.005,443.011 116,443 C117.964,443.011 128,427.95 128,423 C128,416.373 122.627,411 116,411 L116,411 Z" id="location" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
+                </span>
+
+            </div>
+            <div class="w-11/12 ml-3 relative">
+                <input class="bg-white w-full mb-3 border-[#E1E1E1] outline-none border-[3px] rounded-md p-3 " type="password" placeholder="Password" name="password">
+
+                <span class="absolute top-3 right-0">
+                    <svg width="40px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M12 14.5V16.5M7 10.0288C7.47142 10 8.05259 10 8.8 10H15.2C15.9474 10 16.5286 10 17 10.0288M7 10.0288C6.41168 10.0647 5.99429 10.1455 5.63803 10.327C5.07354 10.6146 4.6146 11.0735 4.32698 11.638C4 12.2798 4 13.1198 4 14.8V16.2C4 17.8802 4 18.7202 4.32698 19.362C4.6146 19.9265 5.07354 20.3854 5.63803 20.673C6.27976 21 7.11984 21 8.8 21H15.2C16.8802 21 17.7202 21 18.362 20.673C18.9265 20.3854 19.3854 19.9265 19.673 19.362C20 18.7202 20 17.8802 20 16.2V14.8C20 13.1198 20 12.2798 19.673 11.638C19.3854 11.0735 18.9265 10.6146 18.362 10.327C18.0057 10.1455 17.5883 10.0647 17 10.0288M7 10.0288V8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8V10.0288" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                </span>
+                
+            </div>
+            
+            <div class="w-11/12 ml-3 relative">
+                <input class="bg-white w-full  border-[#E1E1E1] outline-none border-[3px] rounded-md p-3 " type="password" placeholder="Confirm Password" name="confPassword">
+                
+                <span class="absolute top-3 right-0">
+                    <svg width="40px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10.0001 17H8.00098C4.68727 17 2.00098 14.3137 2.00098 11C2.00098 7.68629 4.68727 5 8.00098 5H16.0001C19.3138 5 22.0001 7.68629 22.0001 11C22.0001 14.3137 19.3138 17 16.0001 17H14.0001M17.0001 20L14.0001 17M14.0001 17L17.0001 14" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                </span>
+                <p class="ml-2 text-sm mt-2 text-[#0071BC] underline flex items-center"><input class="mr-1" type="checkbox">Afficher le mot de pass</p>
+            </div>
+        </div>
+            <button type="submit"class="bg-[#0071BC] hover:bg-[#0071bcb4] transition-all duration-200 text-white font-semibold py-2 px-8 rounded-md absolute bottom-4 right-10">Registrer</button>
+    </form>
+</div>
